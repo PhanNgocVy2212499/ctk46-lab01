@@ -3,7 +3,7 @@ import CopyButton from "@/components/copy-button";
 export default function ContactPage() {
   const email = "2212499@d;u.edu.vn";
   const github = "https://github.com/PhanNgocVyMSSV2212499";
-  
+
   return (
     <div className="max-w-5xl mx-auto px-4 py-12">
       <h1 className="text-3xl font-bold mb-6">Liên hệ</h1>
@@ -13,13 +13,16 @@ export default function ContactPage() {
           <div className="flex items-center justify-between flex-wrap gap-4">
             <p>
               <strong>Email:</strong>{" "}
-              <a href={`mailto:${email}`} className="text-blue-600 dark:text-blue-400 hover:underline">
+              <a
+                href={`mailto:${email}`}
+                className="text-blue-600 dark:text-blue-400 hover:underline"
+              >
                 {email}
               </a>
             </p>
             <CopyButton textToCopy={email} />
           </div>
-          
+
           <div className="flex items-center justify-between flex-wrap gap-4">
             <p>
               <strong>GitHub:</strong>{" "}
@@ -36,7 +39,8 @@ export default function ContactPage() {
           </div>
 
           <p>
-            <strong>Địa chỉ:</strong> Đại học Đà Lạt, 01 Phù Đổng Thiên Vương, Đà Lạt
+            <strong>Địa chỉ:</strong> Đại học Đà Lạt, 01 Phù Đổng Thiên Vương,
+            Đà Lạt
           </p>
         </div>
       </div>

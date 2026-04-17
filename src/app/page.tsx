@@ -11,10 +11,12 @@ export default function HomePage() {
         </div>
 
         <h1 className="text-4xl md:text-5xl font-bold mb-4">
-          Xin chào! Tôi là <span className="text-blue-600 dark:text-blue-400">Phan Ngọc Vỹ</span>
+          Xin chào! Tôi là{" "}
+          <span className="text-blue-600 dark:text-blue-400">Phan Ngọc Vỹ</span>
         </h1>
         <p className="text-xl text-gray-600 dark:text-gray-300 mb-8 max-w-2xl mx-auto">
-          MSSV 2212499, sinh viên IT trường Đại học Đà Lạt. Tôi thích chill, chơi game và phát triển các sản phẩm phần mềm thực tế.
+          MSSV 2212499, sinh viên IT trường Đại học Đà Lạt. Tôi thích chill,
+          chơi game và phát triển các sản phẩm phần mềm thực tế.
         </p>
 
         <div className="flex justify-center gap-4">
@@ -72,9 +74,13 @@ export default function HomePage() {
       <div className="bg-blue-50 dark:bg-blue-900/20 rounded-2xl p-8 text-center">
         <h2 className="text-2xl font-bold mb-3">Khám phá kỹ năng của tôi</h2>
         <p className="text-gray-600 dark:text-gray-300 mb-4">
-          Xem danh sách kỹ năng lập trình, công nghệ và công cụ tôi đang sử dụng.
+          Xem danh sách kỹ năng lập trình, công nghệ và công cụ tôi đang sử
+          dụng.
         </p>
-        <Link href="/skills" className="text-blue-600 dark:text-blue-400 font-semibold hover:underline">
+        <Link
+          href="/skills"
+          className="text-blue-600 dark:text-blue-400 font-semibold hover:underline"
+        >
           Xem trang kỹ năng →
         </Link>
       </div>

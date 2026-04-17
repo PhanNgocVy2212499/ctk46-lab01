@@ -16,7 +16,8 @@ export default function SkillsPage() {
     <div className="max-w-5xl mx-auto px-4 py-12">
       <h1 className="text-3xl font-bold mb-4">Kỹ năng lập trình</h1>
       <p className="text-gray-600 dark:text-gray-300 mb-8">
-        Danh sách các công nghệ và kỹ năng em đang học tập, sử dụng trong bài tập và đồ án.
+        Danh sách các công nghệ và kỹ năng em đang học tập, sử dụng trong bài
+        tập và đồ án.
       </p>
 
       <div className="grid grid-cols-2 md:grid-cols-3 gap-4">

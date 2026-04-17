@@ -13,7 +13,8 @@ export const projects: Project[] = [
   {
     id: "toyscan",
     title: "ToyScan",
-    description: "Nền tảng hỗ trợ quản lý, nhận diện và theo dõi đồ chơi thông minh",
+    description:
+      "Nền tảng hỗ trợ quản lý, nhận diện và theo dõi đồ chơi thông minh",
     longDescription:
       "ToyScan là dự án em tham gia xây dựng nhằm hỗ trợ quản lý dữ liệu sản phẩm và tối ưu trải nghiệm theo dõi thông tin đồ chơi. Em tập trung vào phần phát triển tính năng, tích hợp giao diện và xử lý luồng dữ liệu trong ứng dụng.",
     tech: ["TypeScript", "React", "Next.JS", "GitHub"],
