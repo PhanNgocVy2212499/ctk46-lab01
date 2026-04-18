@@ -2,13 +2,14 @@
 
 import { useActionState } from "react";
 import { createGuestbookEntry, ActionState } from "@/app/guestbook/actions";
+import FormSubmitButton from "@/components/form-submit-button";
 
 const initialState: ActionState = {
  success: false,
 };
 
 export default function GuestbookForm() {
- const [state, formAction, isPending] = useActionState(
+ const [state, formAction] = useActionState(
   createGuestbookEntry,
   initialState
  );
@@ -52,13 +53,12 @@ export default function GuestbookForm() {
     )}
    </div>
 
-   <button
-    type="submit"
-    disabled={isPending}
-    className="bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
-   >
-    {isPending ? "Đang gửi..." : "Gửi lời nhắn"}
-   </button>
+    <FormSubmitButton
+     pendingText="Đang gửi..."
+     className="bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+    >
+     Gửi lời nhắn
+    </FormSubmitButton>
 
    {state.success && (
     <p className="text-green-600 text-sm">Gửi lời nhắn thành công!</p>

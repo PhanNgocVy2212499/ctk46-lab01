@@ -1,17 +1,20 @@
 "use client";
 
-import { useActionState } from "react";
+import { useActionState, useState } from "react";
 import { sendContactMessage, ContactFormState } from "./actions";
+import FormSubmitButton from "@/components/form-submit-button";
 
 const initialState: ContactFormState = {
  success: false,
 };
 
 export default function ContactPage() {
- const [state, formAction, isPending] = useActionState(
+ const [state, formAction] = useActionState(
   sendContactMessage,
   initialState
  );
+ const [forceShowForm, setForceShowForm] = useState(false);
+ const showSuccess = state.success && !forceShowForm;
 
  return (
   <div className="max-w-3xl mx-auto px-4 py-12">
@@ -55,7 +58,7 @@ export default function ContactPage() {
 
     {/* Form liên hệ */}
     <div className="md:col-span-2">
-     {state.success ? (
+    {showSuccess ? (
       <div className="bg-green-50 border border-green-200 rounded-lg p-6 text-center">
        <h3 className="text-green-700 font-semibold text-lg mb-2">
         Gửi thành công!
@@ -63,9 +66,20 @@ export default function ContactPage() {
        <p className="text-green-600">
         Cảm ơn bạn đã liên hệ. Tôi sẽ phản hồi sớm nhất có thể.
        </p>
+       <button
+        type="button"
+        onClick={() => setForceShowForm(true)}
+        className="mt-4 inline-flex items-center px-4 py-2 rounded-lg border border-green-300 text-green-700 hover:bg-green-100 transition-colors"
+       >
+        Gửi tin nhắn khác
+       </button>
       </div>
      ) : (
-      <form action={formAction} className="space-y-4">
+      <form
+       action={formAction}
+       onSubmitCapture={() => setForceShowForm(false)}
+       className="space-y-4"
+      >
        <div>
         <label
          htmlFor="name"
@@ -146,13 +160,12 @@ export default function ContactPage() {
         )}
        </div>
 
-       <button
-        type="submit"
-        disabled={isPending}
-        className="w-full bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
-       >
-        {isPending ? "Đang gửi..." : "Gửi tin nhắn"}
-       </button>
+      <FormSubmitButton
+       pendingText="Đang gửi..."
+       className="w-full bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+      >
+       Gửi tin nhắn
+      </FormSubmitButton>
       </form>
      )}
     </div>
